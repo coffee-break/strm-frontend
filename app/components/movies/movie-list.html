@@ -1,0 +1,15 @@
+<h1>Movies list</h1>
+
+<div>
+  <label>
+    Search
+    <input type="search">
+  </label>
+</div>
+
+
+<ul>
+  <li *ng-for="#movie of movies">
+    {{movie.title}}
+  </li>
+</ul>

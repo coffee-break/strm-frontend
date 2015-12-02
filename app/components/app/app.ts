@@ -8,10 +8,13 @@ import {
 import {HomeCmp} from '../home/home';
 import {AboutCmp} from '../about/about';
 import {NameList} from '../../services/name_list';
+import {MovieListCmp} from "../movies/MovieList";
+import {MoviesRepository} from "../../services/movies/MoviesRepository";
+
 
 @Component({
   selector: 'app',
-  viewProviders: [NameList],
+  viewProviders: [NameList, MoviesRepository],
   templateUrl: './components/app/app.html',
   styleUrls: ['./components/app/app.css'],
   encapsulation: ViewEncapsulation.None,
@@ -19,6 +22,7 @@ import {NameList} from '../../services/name_list';
 })
 @RouteConfig([
   { path: '/', component: HomeCmp, as: 'Home' },
-  { path: '/about', component: AboutCmp, as: 'About' }
+  { path: '/about', component: AboutCmp, as: 'About' },
+  { path: '/movies', component: MovieListCmp, as: 'Movies' }
 ])
 export class AppCmp {}
